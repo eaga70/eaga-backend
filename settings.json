@@ -1,0 +1,13 @@
+{
+  "eaga-default-user": {
+    "butlerMode": true,
+    "voiceEnabled": true,
+    "pendingCalendarAction": {
+      "type": "calendar_create",
+      "title": "lunch",
+      "startISO": "2026-03-15T12:00:00.000Z",
+      "endISO": "2026-03-15T12:30:00.000Z",
+      "durationMinutes": 30
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "eaga-default-user": [
+    {
+      "role": "user",
+      "text": "Can you make the reminder half an hour before",
+      "ts": "2026-01-29T15:03:14.974Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Done. I’ve updated both “Call John” events for tomorrow to alert 30 minutes before.",
+      "ts": "2026-01-29T15:03:19.803Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar, call john tomorrow at five p m schedule a dinner at seven.Put on my calendar meeting at ten a m",
+      "ts": "2026-01-29T15:16:06.264Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Done. Added for tomorrow in your local time:\n- Call John — 5:00–5:30 PM, 10‑min reminder\n- Dinner — 7:00–7:30 PM, 10‑min reminder\n- Meeting — 10:00–10:30 AM, 10‑min reminder\n\nWant me to switch these to 30‑minute reminders as well?",
+      "ts": "2026-01-29T15:16:26.436Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar, call john tomorrow at five p m",
+      "ts": "2026-01-29T15:17:50.504Z"
+    },
+    {
+      "role": "assistant",
+      "text": "It’s already on your calendar tomorrow at 5:00–5:30 PM (10‑min reminder). Want me to switch it to a 30‑minute reminder?",
+      "ts": "2026-01-29T15:18:03.173Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar, call john tomorrow at five p m",
+      "ts": "2026-01-29T15:18:45.765Z"
+    },
+    {
+      "role": "assistant",
+      "text": "It’s already on your calendar tomorrow at 5:00–5:30 PM (10‑min reminder). Do you want me to create another event or adjust the reminder?",
+      "ts": "2026-01-29T15:18:51.065Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar, call john tomorrow at three p m",
+      "ts": "2026-01-30T13:17:36.010Z"
+    },
+    {
+      "role": "assistant",
+      "text": "It’s already on your calendar tomorrow at 3:00–3:30 PM (30‑min reminder). Do you want me to create another event or adjust the reminder?",
+      "ts": "2026-01-30T13:17:53.492Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar test event tomorrow.At three p m",
+      "ts": "2026-01-30T13:28:10.726Z"
+    },
+    {
+      "role": "assistant",
+      "text": "You’ve already got “Call John” from 3:00–3:30 PM tomorrow. Want me to add “Test event” overlapping at 3:00–3:30, or pick a different time?",
+      "ts": "2026-01-30T13:28:22.840Z"
+    },
+    {
+      "role": "user",
+      "text": "Overlap",
+      "ts": "2026-01-30T13:28:44.397Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Done. Added “Test event” tomorrow 3:00–3:30 PM (your local time), overlapping “Call John,” with a 10‑min reminder.",
+      "ts": "2026-01-30T13:28:52.948Z"
+    },
+    {
+      "role": "user",
+      "text": "Forget everything on my calendar",
+      "ts": "2026-01-30T13:29:47.067Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Okay — I’ve forgotten everything you asked me to remember.",
+      "ts": "2026-01-30T13:29:47.068Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar test event tomorrow.At three p m",
+      "ts": "2026-01-30T13:45:56.240Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Done. Added “Test event” tomorrow 3:00–3:30 PM (your local time) with a 10‑min reminder.",
+      "ts": "2026-01-30T13:46:03.340Z"
+    },
+    {
+      "role": "user",
+      "text": "To my calendar test event tomorrow at three p m",
+      "ts": "2026-01-30T14:26:21.806Z"
+    },
+    {
+      "role": "assistant",
+      "text": "You already have “Test event” tomorrow 3:00–3:30 PM with a 10‑min reminder. Add another copy, or adjust the existing one?",
+      "ts": "2026-01-30T14:26:31.276Z"
+    },
+    {
+      "role": "user",
+      "text": "Add to my calendar test event tomorrow.At four p m",
+      "ts": "2026-01-30T14:27:19.824Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Done. Added “Test event” tomorrow 4:00–4:30 PM (your local time) with a 10‑min reminder.",
+      "ts": "2026-01-30T14:27:27.718Z"
+    },
+    {
+      "role": "user",
+      "text": "Remember that I arrive?I love in blue color",
+      "ts": "2026-01-30T15:10:43.159Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Got it — I’ll remember that.",
+      "ts": "2026-01-30T15:10:43.161Z"
+    },
+    {
+      "role": "user",
+      "text": "Forget everything about me",
+      "ts": "2026-01-30T15:10:59.819Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Okay — I’ve forgotten everything you asked me to remember.",
+      "ts": "2026-01-30T15:10:59.820Z"
+    },
+    {
+      "role": "user",
+      "text": "Remember that my favorite color is green",
+      "ts": "2026-01-31T10:59:58.752Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Got it — I’ll remember that.",
+      "ts": "2026-01-31T10:59:58.752Z"
+    },
+    {
+      "role": "user",
+      "text": "Remember that mark's favorite color is blue",
+      "ts": "2026-01-31T11:00:25.413Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Got it — I’ll remember that.",
+      "ts": "2026-01-31T11:00:25.414Z"
+    },
+    {
+      "role": "user",
+      "text": "Good morning how are you doing today",
+      "ts": "2026-01-31T12:00:47.001Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Hello! How can I help you?",
+      "ts": "2026-01-31T12:00:47.008Z"
+    },
+    {
+      "role": "user",
+      "text": "Can you tell me more about life insurance",
+      "ts": "2026-01-31T12:01:16.966Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Here’s a quick, practical overview of life insurance:\n\nWhat it is\n- A policy that pays your beneficiaries a tax-free lump sum (death benefit) if you die during coverage.\n\nMain types\n- Term life: Coverage for 10–40 years. Lowest cost. Good for income replacement, mortgage, kids’ expenses. No cash value.\n- Whole life: Lifetime coverage with guaranteed premiums, grows cash value. Much pricier. Can be used for estate needs or forced savings.\n- Universal life: Lifetime coverage with flexible premiums; can build cash value. Risk of underfunding if premiums are too low.\n- Variable life: Cash value invested in markets; potential growth with higher risk and fees.\n\nHow much coverage\n- Quick rule: 10–15× your annual income, plus debts, minus liquid assets.\n- Better: sum of (years of income replacement) + (mortgage/loans) + (college or care needs) + (final expenses) − (savings/other insurance).\n\nTerm length\n- Match it to your biggest obligations (e.g., years left on mortgage, until kids are independent).\n\nWhen permanent policies make sense\n- You need lifelong coverage (special‑needs dependents).\n- Estate planning/liquidity.\n- Maxing out other tax-advantaged savings and want a forced-savings component with guarantees.\n\nCost drivers\n- Age and health (apply sooner is cheaper).\n- Coverage amount and term length.\n- Smoking, driving record, hobbies, family history.\n- Riders and insurer pricing.\n\nCommon riders (optional add‑ons)\n- Waiver of premium (if disabled).\n- Child or spousal rider.\n- Term conversion (term → permanent without new medical exam).\n- Accelerated death benefit (access part of benefit if terminally ill).\n\nUnderwriting and approval\n- Options range from fully underwritten (exam, best rates) to no‑exam/accelerated (faster, usually higher premiums).\n- Be accurate—misstatements can void claims.\n\nTaxes and beneficiaries\n- Death benefits are generally income‑tax free to beneficiaries.\n- Can be included in your estate for estate tax unless owned by an irrevocable trust.\n- Keep beneficiary designations updated and name contingents.\n\nHow to shop\n- Get quotes from multiple A‑ or better‑rated insurers.\n- Decide term length and coverage first; avoid overbuying permanent insurance.\n- Consider convertibility on term policies.\n- Laddering term policies can save money (e.g., mix of 10/20/30‑year terms).\n\nAvoid\n- Mixing insurance and investing unless you have specific permanent‑policy needs.\n- Letting policies lapse—set autopay and review annually.\n- Buying through pressure sales without comparing.\n\nIf you want, tell me your age, health status (nonsmoker/smoker), income, debts, kids’ ages, and desired term, and I can estimate coverage and typical monthly costs.",
+      "ts": "2026-01-31T12:01:39.884Z"
+    },
+    {
+      "role": "user",
+      "text": "Forget everything I asked you to remember",
+      "ts": "2026-01-31T15:48:35.682Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Okay — I’ve forgotten everything you asked me to remember.",
+      "ts": "2026-01-31T15:48:35.683Z"
+    },
+    {
+      "role": "user",
+      "text": "Add a call on February 3 at 10 am",
+      "ts": "2026-01-31T16:04:23.021Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Got it — I’m ready to add \"Call\" for 2/3/2026, 2:00:00 AM (about 30 min).",
+      "ts": "2026-01-31T16:04:23.022Z"
+    },
+    {
+      "role": "user",
+      "text": "Schedule lunch March 15 at noon",
+      "ts": "2026-01-31T16:05:10.969Z"
+    },
+    {
+      "role": "assistant",
+      "text": "Got it — I’m ready to add \"lunch\" for 3/15/2026, 5:00:00 AM (about 30 min).",
+      "ts": "2026-01-31T16:05:10.970Z"
+    }
+  ]
+}
