@@ -8,7 +8,6 @@ import * as chrono from "chrono-node";
 console.log("OPENAI KEY EXISTS:", !!process.env.OPENAI_API_KEY);
 
 const app = express();
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 app.use(cors());
 app.use(express.json({ limit: "2mb" }));
@@ -501,4 +500,8 @@ app.delete("/memory/:userId/:index", (req, res) => {
     return res.status(500).json({ error: "Failed to delete memory" });
   }
 });
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
