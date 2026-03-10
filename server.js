@@ -241,6 +241,18 @@ app.post("/chat", async (req, res) => {
     const raw = String(text);
     const t = normalize(raw);
 
+    console.log("CHAT RECEIVED:", t);
+
+    // Schedule questions
+if (
+  t.includes("schedule") ||
+  t.includes("what do i have") ||
+  t.includes("what's on")
+) {
+  const response = await buildScheduleResponseForDate(new Date());
+  return res.json({ reply: response });
+}
+
     /* ---------- REMINDER: CREATE ---------- */
     if (t.includes("remind me")) {
       const parsed = chrono.parse(raw, new Date(), { forwardDate: true });
