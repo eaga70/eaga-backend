@@ -34,6 +34,10 @@ function loadJSON(file, fallback) {
   }
 }
 
+function saveMemory(data) {
+  fs.writeFileSync(MEMORY_FILE, JSON.stringify(data, null, 2));
+}
+
 function saveJSON(file, data) {
   fs.writeFileSync(file, JSON.stringify(data, null, 2));
 }
@@ -247,6 +251,8 @@ if (t.startsWith("remember")) {
 
   if (!memoryStore[userId]) memoryStore[userId] = [];
   memoryStore[userId].push(memoryText);
+
+  saveMemory(memoryStore);
 
   return res.json({
     reply: "Got it. I'll remember that."
