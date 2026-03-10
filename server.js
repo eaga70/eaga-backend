@@ -247,12 +247,17 @@ app.post("/chat", async (req, res) => {
 
     // MEMORY: remember something
 if (t.startsWith("remember")) {
-  const memoryText = raw.replace(/^remember\s*(that)?\s*/i, "");
+  const memoryText = raw.replace(/^remember\s*(that)?\s*/i, "").trim();
 
-  if (!memoryStore[userId]) memoryStore[userId] = [];
+  if (!memoryStore[userId]) {
+    memoryStore[userId] = [];
+  }
+
   memoryStore[userId].push(memoryText);
 
   saveMemory(memoryStore);
+
+  console.log("MEMORY SAVED:", userId, memoryText);
 
   return res.json({
     reply: "Got it. I'll remember that."
