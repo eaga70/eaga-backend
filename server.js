@@ -248,8 +248,6 @@ if (t.startsWith("remember")) {
   if (!memoryStore[userId]) memoryStore[userId] = [];
   memoryStore[userId].push(memoryText);
 
-  saveMemory(memoryStore);
-
   return res.json({
     reply: "Got it. I'll remember that."
   });
