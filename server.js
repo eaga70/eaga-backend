@@ -241,19 +241,23 @@ app.post("/chat", async (req, res) => {
     const raw = String(text);
     const t = normalize(raw);
 
-    console.log("CHAT RECEIVED:", t);
+    // MEMORY: remember something
+if (t.startsWith("remember")) {
+  const memoryText = raw.replace(/^remember\s*(that)?\s*/i, "");
 
-    // Schedule questions
-if (
-  t.includes("schedule") ||
-  t.includes("what do i have") ||
-  t.includes("what's on")
-) {
-  const response = await buildScheduleResponseForDate(new Date());
-  return res.json({ reply: response });
+  if (!memoryStore[userId]) memoryStore[userId] = [];
+  memoryStore[userId].push(memoryText);
+
+  saveMemory(memoryStore);
+
+  return res.json({
+    reply: "Got it. I'll remember that."
+  });
 }
 
-    /* ---------- REMINDER: CREATE ---------- */
+    console.log("CHAT RECEIVED:", t);
+
+        /* ---------- REMINDER: CREATE ---------- */
     if (t.includes("remind me")) {
       const parsed = chrono.parse(raw, new Date(), { forwardDate: true });
 
