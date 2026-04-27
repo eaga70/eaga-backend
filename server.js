@@ -51,7 +51,9 @@ app.post("/voice", upload.single("file"), async (req, res) => {
       answer: response.output_text,
     });
   } catch (err) {
-    console.error("❌ ERROR:", err);
+    console.error("❌ FULL ERROR:", err);
+console.error("❌ MESSAGE:", err?.message);
+console.error("❌ STACK:", err?.stack);
     res.status(500).json({ error: "AI FAILED" });
   }
 });
