@@ -22,6 +22,7 @@ app.use(express.json());
 
 
 app.post("/voice", upload.single("file"), async (req, res) => {
+  console.log("🔥 /voice endpoint HIT");
   console.log("==== REQUEST RECEIVED ====");
   console.log("FILE:", req.file);
 
