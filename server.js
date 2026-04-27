@@ -40,8 +40,6 @@ app.post("/voice", upload.single("file"), async (req, res) => {
 
 const text = transcription.text || "";
 
-    const text = transcription.text;
-
     const response = await openai.responses.create({
       model: "gpt-4.1-mini",
       input: `You are EAGA AI Concierge.\nUser said: ${text}`,
