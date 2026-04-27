@@ -33,9 +33,11 @@ app.post("/voice", upload.single("file"), async (req, res) => {
     const stream = fs.createReadStream(req.file.path);
 
     const transcription = await openai.audio.transcriptions.create({
-      file: stream,
-      model: "gpt-4o-transcribe",
-    });
+  file: fs.createReadStream(req.file.path),
+  model: "gpt-4o-transcribe",
+});
+
+const text = transcription.text || "";
 
     const text = transcription.text;
 
@@ -54,7 +56,10 @@ app.post("/voice", upload.single("file"), async (req, res) => {
     console.error("❌ FULL ERROR:", err);
 console.error("❌ MESSAGE:", err?.message);
 console.error("❌ STACK:", err?.stack);
-    res.status(500).json({ error: "AI FAILED" });
+    res.status(500).json({
+  error: "AI FAILED",
+  message: err?.message,
+});
   }
 });
 
