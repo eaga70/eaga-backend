@@ -4,6 +4,11 @@ import express from "express";
 import fs from "fs";
 import multer from "multer";
 import OpenAI from "openai";
+import ffmpeg from "fluent-ffmpeg";
+import ffmpegPath from "ffmpeg-static";
+import path from "path";
+
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 dotenv.config();
 
@@ -33,8 +38,23 @@ app.post("/voice", upload.single("file"), async (req, res) => {
   try {
     const stream = fs.createReadStream(req.file.path);
 
-    const transcription = await openai.audio.transcriptions.create({
-  file: fs.createReadStream(req.file.path),
+    const inputPath = req.file.path;
+const outputPath = inputPath + ".wav";
+
+console.log("🎧 Converting to WAV...");
+
+await new Promise((resolve, reject) => {
+  ffmpeg(inputPath)
+    .toFormat("wav")
+    .on("end", resolve)
+    .on("error", reject)
+    .save(outputPath);
+});
+
+console.log("✅ Conversion done:", outputPath);
+
+const transcription = await openai.audio.transcriptions.create({
+  file: fs.createReadStream(outputPath),
   model: "gpt-4o-transcribe",
 });
 
@@ -45,7 +65,8 @@ const text = transcription.text || "";
       input: `You are EAGA AI Concierge.\nUser said: ${text}`,
     });
 
-    fs.unlinkSync(req.file.path);
+    fs.unlinkSync(inputPath);
+fs.unlinkSync(outputPath);
 
     res.json({
       transcript: text,
