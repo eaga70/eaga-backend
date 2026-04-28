@@ -94,23 +94,38 @@ app.post("/summarize", async (req, res) => {
     const response = await openai.responses.create({
       model: "gpt-4.1-mini",
       input: `
-Summarize the following meeting notes.
+You are an AI meeting assistant.
 
-Return:
-- Short summary (bullet points)
-- Action items (if any)
+Analyze the meeting notes and return JSON ONLY in this format:
+
+{
+  "summary": ["bullet point 1", "bullet point 2"],
+  "actions": ["person → task", "person → task"]
+}
+
+Rules:
+- Keep summary short and clear
+- Extract real actionable tasks
+- If no actions, return empty array
+- DO NOT return anything except JSON
 
 Notes:
 ${text}
 `,
     });
 
-    const summary =
-  response.output_text ||
-  response.output?.[0]?.content?.[0]?.text ||
-  "No summary generated.";
+    let parsed;
 
-res.json({ summary });
+try {
+  parsed = JSON.parse(response.output_text);
+} catch {
+  parsed = {
+    summary: [response.output_text],
+    actions: [],
+  };
+}
+
+res.json(parsed);
   } catch (err) {
     console.error("❌ SUMMARY ERROR:", err);
     res.status(500).json({ error: "Failed to summarize" });
