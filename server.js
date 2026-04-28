@@ -107,7 +107,9 @@ Rules:
 - Keep summary short and clear
 - Extract real actionable tasks
 - If no actions, return empty array
-- DO NOT return anything except JSON
+- DO NOT include markdown
+- DO NOT include backticks
+- DO NOT include any text outside JSON
 
 Notes:
 ${text}
@@ -116,11 +118,15 @@ ${text}
 
     let parsed;
 
+const raw = response.output_text?.trim() || "";
+
 try {
-  parsed = JSON.parse(response.output_text);
+  parsed = JSON.parse(raw);
 } catch {
+  console.log("⚠️ RAW AI OUTPUT:", raw);
+
   parsed = {
-    summary: [response.output_text],
+    summary: [raw || "No summary generated"],
     actions: [],
   };
 }
