@@ -138,6 +138,44 @@ res.json(parsed);
   }
 });
 
+app.post("/api/chat", async (req, res) => {
+  try {
+    const { message } = req.body;
+
+    if (!message) {
+      return res.status(400).json({
+        error: "No message provided",
+      });
+    }
+
+    console.log("💬 CHAT MESSAGE:", message);
+
+    const response = await openai.responses.create({
+      model: "gpt-4.1-mini",
+      input: `
+You are EAGA AI Concierge.
+
+Be helpful, conversational, and concise.
+
+User message:
+${message}
+`,
+    });
+
+    res.json({
+      reply: response.output_text,
+    });
+
+  } catch (err) {
+    console.error("❌ CHAT ERROR:", err);
+
+    res.status(500).json({
+      error: "Chat failed",
+      message: err?.message,
+    });
+  }
+});
+
 app.listen(3000, () => {
   console.log("🚀 Backend running on http://localhost:3000");
 });
